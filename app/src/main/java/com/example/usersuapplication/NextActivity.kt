@@ -23,7 +23,9 @@ class NextActivity : AppCompatActivity() {
         calendar.setDate(973859619000,false,true)
         calendar.setOnDateChangeListener{calendarView, i, i2, i3 ->
             val month = "$i2"
-            calendarvalue.text = ("$i3/$month/$i").toString()
+            val convertmonthtoint = month.toInt()
+            val addmonthplus1 = convertmonthtoint+1;
+            calendarvalue.text = ("$i3/$addmonthplus1/$i").toString()
         }
 
 
