@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 
-
 class MainActivity : AppCompatActivity() {
     lateinit var slider :SeekBar
     lateinit var value :TextView
@@ -39,12 +38,10 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
-
 //GOTO NEXT PAGE
 findViewById<Button>(R.id.NextBtn).setOnClickListener{GotoNextActivity()}
+    }//END OF MAIN/ON CREATE
 
-    }//end of ON CREATE
-    //
     //GOTO NEXT PAGE FUNCTION AND GET TEXT VALUES
     private fun GotoNextActivity(){
         val firstname = findViewById<EditText>(R.id.FirstNameBtn).text.toString()

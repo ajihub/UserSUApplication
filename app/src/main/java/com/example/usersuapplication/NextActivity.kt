@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CalendarView
-import android.widget.EditText
 import android.widget.TextView
 
 class NextActivity : AppCompatActivity() {
@@ -17,7 +16,7 @@ class NextActivity : AppCompatActivity() {
         //GOTO HOME PAGE BUTTON
         findViewById<Button>(R.id.CompBtn).setOnClickListener{GotoHomeActivity()}
 
-        //Calendar Time
+        //CALENDAR FEATURE
         val calendar = findViewById<CalendarView>(R.id.calendarView)
         val calendarvalue = findViewById<TextView>(R.id.calendarval)
         calendar.setDate(973859619000,false,true)
@@ -27,11 +26,8 @@ class NextActivity : AppCompatActivity() {
             val addmonthplus1 = convertmonthtoint+1;
             calendarvalue.text = ("$i3/$addmonthplus1/$i").toString()
         }
-
-
-
     }
-
+    //RE-INTENT VARIABLES AND TRANSFER TO HOME ACTIVITY
     private fun GotoHomeActivity(){
         val gotohomepage = Intent(this, HomeActivity::class.java)
         val bday = findViewById<TextView>(R.id.calendarval).text.toString()
