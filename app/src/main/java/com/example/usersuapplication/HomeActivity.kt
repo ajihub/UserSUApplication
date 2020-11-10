@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
 
         val photos = intArrayOf(R.drawable.rand, R.drawable.rand2, R.drawable.rand3, R.drawable.rand4, R.drawable.rand5)
         val image = findViewById<ImageView>(R.id.imageChBtn) as ImageView
-        val ran = Random(1)
+        val ran = Random(rand(1,5))
         val i: Int = ran.nextInt(photos.size)
         image.setImageResource(photos[i])
         image.setOnClickListener() {
@@ -24,12 +24,16 @@ class HomeActivity : AppCompatActivity() {
                 image.setImageResource(photos[k])
         }
 
-
-
         val txt = findViewById<TextView>(R.id.displayvalsID)
         val output = intent.getStringExtra("output")
         txt.text = output
     }//End of ON CREATE
+
+    fun rand(start: Int, end: Int): Int {
+        require(start <= end) { "Illegal Argument" }
+        return Random(System.nanoTime()).nextInt(start, end + 1)
+    }
+
 
 
 
